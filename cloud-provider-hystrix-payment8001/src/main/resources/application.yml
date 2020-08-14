@@ -1,0 +1,20 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+
+eureka:
+  client:
+    register-with-eureka: true #注册到服务中心
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7001/eureka/
+  instance:
+    instance-id: pyment8001 #主机名称的配置
+    prefer-ip-address: true #显示主机ip地址
+    #收到最好一次心跳等待的时间上限，单位为秒
+    lease-expiration-duration-in-seconds: 2
+    #客户端网服务端发送的时间间隔 单位为秒
+    lease-renewal-interval-in-seconds: 1
